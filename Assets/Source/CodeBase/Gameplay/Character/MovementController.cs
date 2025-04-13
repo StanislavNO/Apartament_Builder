@@ -41,11 +41,11 @@ namespace Source.CodeBase.Gameplay.Character
 
         private void Rotate()
         {
-            _cameraAngle -= _input.MouseAxis.y * _movementData.VerticalTurnSensitivity;
+            _cameraAngle -= _input.RotateAxis.y * _movementData.VerticalTurnSensitivity;
             _cameraAngle = Mathf.Clamp(_cameraAngle, _movementData.VerticalMinAngle, _movementData.VerticalMaxAngle);
 
             _playerCamera.localEulerAngles = Vector3.right * _cameraAngle;
-            _playerTransform.Rotate(Vector3.up * (_movementData.HorizontalTurnSensitivity * _input.MouseAxis.x));
+            _playerTransform.Rotate(Vector3.up * (_movementData.HorizontalTurnSensitivity * _input.RotateAxis.x));
         }
 
         private void Move()

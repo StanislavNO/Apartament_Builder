@@ -1,3 +1,4 @@
+using Source.CodeBase.Controllers;
 using Source.CodeBase.Gameplay.Character;
 using Source.CodeBase.Infrastructure.Services.InputService;
 using UnityEngine;
@@ -13,6 +14,12 @@ namespace Source.CodeBase.Infrastructure.Installers
         {
             BindServices();
             BindCharacter();
+            BindControllers();
+        }
+
+        private void BindControllers()
+        {
+            Container.BindInterfacesTo<BuildController>().AsSingle();
         }
 
         private void BindServices()

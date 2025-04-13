@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
 
 namespace Source.CodeBase.Infrastructure.Services.InputService
 {
     public interface IInputService
     {
-        Vector3 MoveAxis { get; }
+        event Action OnClicked;
+        event Action<float> OnScrolled;
+        
         float VerticalAxis { get;}
         float HorizontalAxis { get;}
-        Vector2 MouseAxis { get;}
+        Vector2 RotateAxis { get;}
     }
 }

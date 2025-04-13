@@ -4,6 +4,7 @@ namespace Source.CodeBase.Gameplay.Environment
 {
     public class Loot : MonoBehaviour
     {
-        [SerializeField] public Transform Transform {get; private set;}
+        [field:SerializeField] public Transform Transform {get; private set;}
+        [field: SerializeField] public Rigidbody Rigidbody {get; private set;}
     }
 }
